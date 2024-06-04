@@ -1,0 +1,26 @@
+{
+    "name": "book-borowing",
+    "version": "1.0.0",
+    "description": "restful api for book borrowing using express.js and mongodb",
+    "main": "src/app.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "restful",
+        "api",
+        "express",
+        "ddd",
+        "mongodb"
+    ],
+    "author": "lazyaff",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "mongoose": "^8.4.4"
+    }
+}
