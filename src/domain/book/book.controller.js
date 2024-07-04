@@ -1,6 +1,6 @@
 import Book from "./book.schema.js";
 
-export const check = async (req, res) => {
+export const checkBook = async (req, res) => {
     try {
         const books = await Book.aggregate([
             {
@@ -12,14 +12,14 @@ export const check = async (req, res) => {
                 $match: { stock: { $gt: 0 } },
             },
         ]);
-        res.json({
+        return res.json({
             success: true,
             status: 200,
             message: "success",
             data: books,
         });
     } catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             status: 500,
             message: error.message,

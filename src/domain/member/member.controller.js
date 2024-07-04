@@ -1,6 +1,6 @@
 import Member from "./member.schema.js";
 
-export const check = async (req, res) => {
+export const checkMember = async (req, res) => {
     try {
         const members = await Member.aggregate([
             {
@@ -14,14 +14,14 @@ export const check = async (req, res) => {
                 },
             },
         ]);
-        res.json({
+        return res.json({
             success: true,
             status: 200,
             message: "success",
             data: members,
         });
     } catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             status: 500,
             message: error.message,

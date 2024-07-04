@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { check } from "./book.controller.js";
+import { checkBook } from "./book.controller.js";
 
 const bookRouter = Router();
 
-bookRouter.get("/check", check);
+bookRouter.get("/check", checkBook);
 
 export default bookRouter;

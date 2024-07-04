@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { check } from "./member.controller.js";
+import { checkMember } from "./member.controller.js";
 
 const memberRouter = Router();
 
-memberRouter.get("/check", check);
+memberRouter.get("/check", checkMember);
 
 export default memberRouter;
