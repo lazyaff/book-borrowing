@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const schema = mongoose.Schema({
     code: String,
-    name: String,
-    borrowedBooks: [{ code: String, borrowDate: Date, returnDate: Date }],
-    penalty: { type: Date, default: null },
+    title: String,
+    author: String,
+    stock: Number,
 });
 
 schema.method("toJSON", function () {
@@ -13,6 +13,6 @@ schema.method("toJSON", function () {
     return obj;
 });
 
-const Member = mongoose.model("Member", schema);
+const Book = mongoose.model("Book", schema);
 
-export default Member;
+export default Book;
