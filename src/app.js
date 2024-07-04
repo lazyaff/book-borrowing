@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 import { Mongo } from "./infra/database.js";
 import express from "express";
 import cors from "cors";
+import Routes from "./routes.js";
 
 // create instance of express
 const app = express();
@@ -12,6 +13,7 @@ Mongo;
 // enable cors and json
 app.use(cors());
 app.use(express.json());
+app.use(Routes);
 
 // start server
 dotenv.config();

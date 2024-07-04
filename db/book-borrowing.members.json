@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "66868f388b1ded9feaf3ea08"
+  },
+  "code": "M001",
+  "name": "Angga",
+  "borrowedBooks": [],
+  "penalty": null
+},
+{
+  "_id": {
+    "$oid": "66868f388b1ded9feaf3ea09"
+  },
+  "code": "M002",
+  "name": "Ferry",
+  "borrowedBooks": [],
+  "penalty": null
+},
+{
+  "_id": {
+    "$oid": "66868f388b1ded9feaf3ea0a"
+  },
+  "code": "M003",
+  "name": "Putri",
+  "borrowedBooks": [],
+  "penalty": null
+}]
