@@ -28,8 +28,11 @@ describe("book", () => {
     });
 
     describe("check available book", () => {
-        it("should return 200", async () => {
-            const { body } = await supertest(app).get("/book/check");
+        it("should return 200 and get one data", async () => {
+            const { body, statusCode } = await supertest(app).get(
+                "/book/check"
+            );
+            expect(statusCode).toBe(200);
             expect(body.data.length).toBe(1);
         });
     });
