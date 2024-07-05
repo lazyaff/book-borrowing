@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "dev": "nodemon src/app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest --detectOpenHandles"
     },
     "keywords": [
         "restful",
@@ -24,7 +24,11 @@
         "mongoose": "^8.4.4"
     },
     "devDependencies": {
+        "@babel/core": "^7.24.7",
+        "@babel/preset-env": "^7.24.7",
+        "babel-jest": "^29.7.0",
         "jest": "^29.7.0",
+        "mongodb-memory-server": "^9.4.0",
         "supertest": "^7.0.0"
     }
 }
