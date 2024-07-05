@@ -1,0 +1,144 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Book Borrowing API",
+        "version": "1.0.0",
+        "description": "A simple Express book borrowing API"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Development server"
+        }
+    ],
+    "paths": {
+        "/book/check": {
+            "get": {
+                "summary": "Get list of available books",
+                "tags": ["Books"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "success": true,
+                                    "status": 200,
+                                    "message": "success",
+                                    "data": [
+                                        {
+                                            "code": "JK-45",
+                                            "title": "Harry Potter",
+                                            "author": "J.K Rowling",
+                                            "stock": 1
+                                        },
+                                        {
+                                            "code": "SHR-1",
+                                            "title": "A Study in Scarlet",
+                                            "author": "Arthur Conan Doyle",
+                                            "stock": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/member/check": {
+            "get": {
+                "summary": "Get list of existing members",
+                "tags": ["Members"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "success": true,
+                                    "status": 200,
+                                    "message": "success",
+                                    "data": [
+                                        {
+                                            "code": "M001",
+                                            "name": "Angga",
+                                            "borrowedBooks": 0
+                                        },
+                                        {
+                                            "code": "M002",
+                                            "name": "Ferry",
+                                            "borrowedBooks": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/borrowing/borrow": {
+            "post": {
+                "summary": "Borrow book",
+                "tags": ["Borrowing"],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "memberCode": "M001",
+                                "bookCode": "JK-45"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "success": true,
+                                    "status": 200,
+                                    "message": "Book borrowed successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/borrowing/return": {
+            "post": {
+                "summary": "Return book",
+                "tags": ["Borrowing"],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "example": {
+                                "memberCode": "M001",
+                                "bookCode": "JK-45"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "success": true,
+                                    "status": 200,
+                                    "message": "Book returned successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

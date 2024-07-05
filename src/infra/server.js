@@ -2,6 +2,7 @@ import { Mongo } from "./database.js";
 import express from "express";
 import cors from "cors";
 import Routes from "./routes.js";
+import setupSwagger from "./swagger.js";
 
 const createServer = () => {
     // create instance of express
@@ -9,6 +10,9 @@ const createServer = () => {
 
     // connect to database
     Mongo;
+
+    // set up swagger
+    setupSwagger(app);
 
     // enable cors and json
     app.use(cors());
